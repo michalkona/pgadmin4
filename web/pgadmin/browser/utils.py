@@ -141,6 +141,10 @@ class PGChildModule():
 
 import typing as t
 
+http_method_funcs = frozenset(
+    ["get", "post", "head", "options", "delete", "put", "trace", "patch"]
+)
+
 class NodeView(View):
     def __init_subclass__(cls, **kwargs: t.Any) -> None:
         super().__init_subclass__(**kwargs)
