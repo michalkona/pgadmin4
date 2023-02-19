@@ -139,6 +139,7 @@ class PGChildModule():
     def get_nodes(self, sid=None, **kwargs):
         pass
 
+import typing as t
 
 class NodeView(View):
     def __init_subclass__(cls, **kwargs: t.Any) -> None:
