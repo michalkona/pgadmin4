@@ -64,7 +64,7 @@ This module defines a set of methods, properties and attributes,
 that every module should implement.
 """)
 
-from pgadmin.browser.utils import NodeView
+from pgadmin.browser.utils import NodeViewType
 
 print_code(
     target, "NodeView", NodeView,
