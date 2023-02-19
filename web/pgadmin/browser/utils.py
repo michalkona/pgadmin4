@@ -13,7 +13,7 @@ from abc import abstractmethod
 
 import flask
 from flask import render_template, current_app
-from flask.views import View, MethodViewType
+from flask.views import View, MethodView
 from flask_babel import gettext
 
 from config import PG_DEFAULT_DRIVER
