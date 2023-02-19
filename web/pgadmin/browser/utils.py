@@ -140,7 +140,7 @@ class PGChildModule():
         pass
 
 
-class NodeView(View, metaclass=MethodView):
+class NodeView(View, metaclass=MethodView.__init_subclass__):
     """
     A PostgreSQL Object has so many operaions/functions apart from CRUD
     (Create, Read, Update, Delete):
