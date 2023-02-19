@@ -28,8 +28,7 @@ This document contains code for some of the important classes, listed as
 below:\n\n""")
 
 for m in [
-    'PgAdminModule', 'NodeView',
-    'BaseDriver', 'BaseConnection'
+    'PgAdminModule',
 ]:
     target.write("* {0}_\n".format(m))
 
@@ -64,7 +63,7 @@ This module defines a set of methods, properties and attributes,
 that every module should implement.
 """)
 
-from pgadmin.browser.utils import NodeViewType
+from pgadmin.browser.utils import NodeView
 
 print_code(
     target, "NodeView", NodeView,
