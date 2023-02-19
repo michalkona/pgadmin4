@@ -140,7 +140,22 @@ class PGChildModule():
         pass
 
 
-class NodeView(View, metaclass=MethodView.__init_subclass__):
+class NodeView(View):
+    def __init_subclass__(cls, **kwargs: t.Any) -> None:
+        super().__init_subclass__(**kwargs)
+        if "methods" not in cls.__dict__:
+            methods = set()
+
+            for base in cls.__bases__:
+                if getattr(base, "methods", None):
+                    methods.update(base.methods)  # type: ignore[attr-defined]
+
+            for key in http_method_funcs:
+                if hasattr(cls, key):
+                    methods.add(key.upper())
+
+            if methods:
+                cls.methods = methods
     """
     A PostgreSQL Object has so many operaions/functions apart from CRUD
     (Create, Read, Update, Delete):
